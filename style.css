@@ -1,0 +1,31 @@
+body {
+font-family: "Helvetica", "Arial", sans-serif;
+}
+
+#citation {
+height: 100px;
+width: 300px;
+background-color: lightgray;
+margin: auto;
+border-radius: 4px;
+}
+
+button {
+display: block;
+margin: auto;
+margin-top: 20px;
+background-color: darkgray;
+border: none;
+text-decoration: none;
+color: white;
+font-size: 16px;
+padding: 10px 12px;
+}
+
+#mots {
+font-size: 18px;
+text-align: center;
+padding: 15px 20px 15px 20px;
+}
+
+

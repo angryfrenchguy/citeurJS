@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Des faits à propos de Chuck Norris</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- <script type="text/javascript" src="script.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<script>
+$(document).ready(function() {
+  $("#getMessage").on("click", function(){
+    $.getJSON("http://www.chucknorrisfacts.fr/api/facts.json", function(json) {
+	$("#mots").html(JSON.stringify(json));
+	});
+  });
+});
+</script>
+
+<div id="citation">
+
+<p id="mots">"C'est l'endroit où sera la citation."</p>
+
+</div>
+
+<button id="getMessage">Clique moi!</button>
+
+</body>
+</html>
