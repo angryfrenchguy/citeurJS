@@ -11,11 +11,27 @@
 <body>
 
 <script>
+
 $(document).ready(function() {
   $("#getMessage").on("click", function(){
-    $.getJSON("http://www.chucknorrisfacts.fr/api/facts.json", function(json) {
-	$("#mots").html(JSON.stringify(json));
-	});
+    $.getJSON("chuck.json", function(json) {
+    var html = "";
+    
+    json = json.filter(function(val) {
+      return (val.id !== 2);
+    });
+  
+     json.forEach(function(val) {
+ var keys = Object.keys(val);
+ html += "<div class = 'cat'>";
+ keys.forEach(function(key) {
+   html += "<strong>" + key + "</strong>: " + val[key] + "<br>"; 
+   });
+   html += "</div><br>";
+ });
+
+    $("#mots").html(html);
+    });
   });
 });
 </script>
