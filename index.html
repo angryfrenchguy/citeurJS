@@ -9,32 +9,10 @@
 </head>
 
 <body>
-
-<script>
-
-$(document).ready(function() {
-  $("#getMessage").on("click", function(){
-    $.getJSON("chuck.json", function(json) {
-    var html = "";
     
-    json = json.filter(function(val) {
-      return (val.id !== 2);
-    });
-  
-     json.forEach(function(val) {
- var keys = Object.keys(val);
- html += "<div class = 'cat'>";
- keys.forEach(function(key) {
-   html += "<strong>" + key + "</strong>: " + val[key] + "<br>"; 
-   });
-   html += "</div><br>";
- });
-
-    $("#mots").html(html);
-    });
-  });
-});
-</script>
+<div id="titre">    
+<h1>Plein de choses  extraordinaires que vous ne savez pas à propos de <br><span id="chuck">Chuck Norris</span></h1>
+</div>
 
 <div id="citation">
 
@@ -42,7 +20,42 @@ $(document).ready(function() {
 
 </div>
 
-<button id="getMessage">Clique moi!</button>
+<button id="getMessage">Je veux savoir!</button>
 
+<script>
+
+$(document).ready(function() {
+  $("#getMessage").on("click", function(){
+    $.getJSON("chuck.json", function(json) {
+    var html = "";
+    var x = Math.floor(Math.random() * 100 + 1);
+        x = x.toString();
+            json = json.filter(function(val) {
+            return (val.id === x);
+            });
+        
+         json.forEach(function(val) {
+ 
+            html += val.fact;
+             
+            
+        });
+        
+        
+        if (html !== "") {
+        
+        $("#mots").html(html);
+            
+        } else {
+            
+            $("#mots").html("No soup for you!")
+        }
+        
+    });
+  });
+});
+    
+</script>
+    
 </body>
 </html>

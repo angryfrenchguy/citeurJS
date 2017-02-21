@@ -3,8 +3,8 @@ font-family: "Helvetica", "Arial", sans-serif;
 }
 
 #citation {
-height: 100px;
-width: 300px;
+height: 150px;
+width: 450px;
 background-color: lightgray;
 margin: auto;
 border-radius: 4px;
@@ -23,9 +23,19 @@ padding: 10px 12px;
 }
 
 #mots {
-font-size: 18px;
+font-size: 22px;
 text-align: center;
-padding: 15px 20px 15px 20px;
+font-style: italic;
+height: auto;
+padding: 30px 25px 15px 25px;
+}
+
+#titre {
+    width: 80%
+}
+
+#chuck {
+    font-size: 2em
 }
 
 
