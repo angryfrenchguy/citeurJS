@@ -26,33 +26,20 @@
 
 $(document).ready(function() {
   $("#getMessage").on("click", function(){
-    $.getJSON("chuck.json", function(json) {
-    var html = "";
-    var x = Math.floor(Math.random() * 100 + 1);
-        x = x.toString();
-            json = json.filter(function(val) {
-            return (val.id === x);
-            });
-        
-         json.forEach(function(val) {
- 
-            html += val.fact;
-             
-            
-        });
-        
-        
-        if (html !== "") {
-        
-        $("#mots").html(html);
-            
-        } else {
-            
-            $("#mots").html("No soup for you!")
-        }
-        
-    });
-  });
+      
+      var x = Math.floor((Math.random()) * 10); 
+      
+      console.log(x);
+      
+      $.getJSON("http://mysafeinfo.com/api/data?list=englishmonarchs&format=json", function(json) {
+          
+          $("#mots").html(json[x].nm);
+          
+          
+      
+    }); 
+          
+  });      
 });
     
 </script>
