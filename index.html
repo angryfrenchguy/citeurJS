@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
+<meta Content-Type:text/html charset="utf-8">
 <title>Des faits à propos de Chuck Norris</title>
 <link rel="stylesheet" href="style.css" type="text/css">
 <!-- <script type="text/javascript" src="script.js"></script> -->
@@ -15,28 +15,49 @@
 </div>
     
 <div id="conteneur">
-    <button id="getMessage">Je veux savoir!</button>
-    <button id="tweet">Je veux que le monde entier le sache</button>
+    
+
+    
+    <button class="bouton" id="getMessage">Je veux savoir!</button> 
+    
+<!--    <button id="tweet">Je veux que le monde entier le sache</button>-->
+    
+    <a class="bouton" id="gaz" title="tweet ça!" target="_blank">Je veux que le monde entier le sache</a>
+    
     <div id="citation">
         <p id="mots">"C'est l'endroit où sera la citation."</p>
-    </div>       
-    </div>    
+    </div>          
+    
+    
+</div>    
+    
     
 <script>
 $(document).ready(function() {
   $("#getMessage").on("click", function(){
       var x = Math.floor((Math.random()) * 30);
       $.getJSON("http://chucknorrisfacts.fr/api/get?data=tri:alea;nb:30", function(json) {
-          $("#mots").html(json[x].fact);   
+          $("#mots").html(json[x].fact);
+          
+//OK... So, la fonction decodeHTML est nécessaire parce que, pour une raison que je ne pourrais pas expliquer, json[x].fact est encodé http quand je le transmet à Twitter (alors qu'il est parfaitement fine quand je le passe dans ma page... Anyway. Probablement parce que justement, je recevais le fact de cnf.fr en http et que safari traduisait les accents automatiqment, de sorte que je ne les voyais jamais.) 
+          
+          function decodeHtml(html) {
+              var txt = document.createElement("textarea");
+              txt.innerHTML = html;
+              return txt.value;
+          }
+          
+          $("#gaz").attr("href", "https://twitter.com/intent/tweet?text=" + encodeURIComponent(decodeHtml(json[x].fact)));          
     });       
   });      
 });  
 </script>
     
+<!--
 <script>
-    $('#tweet-quote').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
-      }
+    $('#tweet-quote').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent(json[x].fact));
 </script>
+-->
     
 </body>
 </html>

@@ -19,7 +19,7 @@ margin: auto;
 border-radius: 4px;
 }
 
-button {
+.bouton {
 display: inline-block;
 position: absolute;
 background-color: darkgray;
@@ -30,7 +30,7 @@ font-size: 16px;
 padding: 10px 12px;
 }
 
-#tweet {
+#gaz {
 /*margin-top: 10px;*/
 right: 0px;
 background-color: black;
