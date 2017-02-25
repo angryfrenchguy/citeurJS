@@ -17,6 +17,8 @@
 <div id="citation">
 
 <p id="mots">"C'est l'endroit où sera la citation."</p>
+    
+    
 
 </div>
 
@@ -27,13 +29,14 @@
 $(document).ready(function() {
   $("#getMessage").on("click", function(){
       
-      var x = Math.floor((Math.random()) * 10); 
+      var x = Math.floor((Math.random()) * 30); 
       
       console.log(x);
       
-      $.getJSON("http://mysafeinfo.com/api/data?list=englishmonarchs&format=json", function(json) {
+      $.getJSON("http://chucknorrisfacts.fr/api/get?data=tri:alea;nb:30", function(json) {
           
-          $("#mots").html(json[x].nm);
+        console.log(json);
+          $("#mots").html(json[x].fact);
           
           
       

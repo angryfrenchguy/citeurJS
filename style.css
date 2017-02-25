@@ -3,7 +3,7 @@ font-family: "Helvetica", "Arial", sans-serif;
 }
 
 #citation {
-height: 150px;
+height: auto;
 width: 450px;
 background-color: lightgray;
 margin: auto;
@@ -12,8 +12,8 @@ border-radius: 4px;
 
 button {
 display: block;
-margin: auto;
-margin-top: 20px;
+margin: auto;   
+    
 background-color: darkgray;
 border: none;
 text-decoration: none;
@@ -27,8 +27,9 @@ font-size: 22px;
 text-align: center;
 font-style: italic;
 height: auto;
-padding: 30px 25px 15px 25px;
+padding: 30px 25px 30px 25px;
 }
+
 
 #titre {
     width: 80%
