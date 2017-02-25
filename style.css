@@ -2,24 +2,38 @@ body {
 font-family: "Helvetica", "Arial", sans-serif;
 }
 
+#conteneur {
+    position: relative;
+    width: 450px;
+    margin: auto;
+    height: 500px;
+}
+
 #citation {
+display: inline-block;
 height: auto;
 width: 450px;
 background-color: lightgray;
 margin: auto;
+    margin-top: 80px;
 border-radius: 4px;
 }
 
 button {
-display: block;
-margin: auto;   
-    
+display: inline-block;
+position: absolute;
 background-color: darkgray;
 border: none;
 text-decoration: none;
 color: white;
 font-size: 16px;
 padding: 10px 12px;
+}
+
+#tweet {
+/*margin-top: 10px;*/
+right: 0px;
+background-color: black;
 }
 
 #mots {
